@@ -22,6 +22,7 @@ import Jimp from "jimp";
         .write(outpath, (img) => {
           resolve(outpath);
         });
+      return outpath
     } catch (error) {
       reject(error);
     }

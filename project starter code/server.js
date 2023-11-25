@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
+import fs from 'fs'
 
 
 
@@ -29,6 +30,30 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
 
     /**************************************************************************** */
 
+  app.get('/filter-image', async (req, res) => {
+    // validate img_url
+    const query = req.query
+    const imageUrl = query.image_url
+
+    if (!imageUrl) {
+      return res.status(400).json({message: 'Cannot found image url'})
+    }
+
+    const validURLPattern = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+/
+    if (!validURLPattern.test(imageUrl)) {
+      return res.status(422).json({message: 'Invalid URL, cannot process'})
+    }
+
+    try {
+      const output = await filterImageFromURL(imageUrl)
+      res.sendFile(output, () => {
+          deleteLocalFiles([output])
+      })
+    } catch (error) {
+      console.log('ERROR', error);
+      return res.status(400).json({message: 'Filter error'})
+    }
+  })
   //! END @TODO1
   
   // Root Endpoint
