@@ -8,5 +8,9 @@ Please check on proof image in images folder
 <img src="images/Elastic-db.png" />
 
 2. It works well
-<img src="images/it-work.png" />
+<img src="images/local-work.png" />
+
+3. It work well on aws too
+<img src="images/eb-work.png" />
+
 

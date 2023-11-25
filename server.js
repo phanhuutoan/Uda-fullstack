@@ -30,7 +30,7 @@ import fs from 'fs'
 
     /**************************************************************************** */
 
-  app.get('/filter-image', async (req, res) => {
+  app.get('/filteredimage', async (req, res) => {
     // validate img_url
     const query = req.query
     const imageUrl = query.image_url
