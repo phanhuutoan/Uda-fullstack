@@ -1,24 +1,12 @@
-# Full Stack Apps on AWS Project
+# Full Stack Apps on AWS EB
+Link: [http://full-stack-with-eb.us-east-1.elasticbeanstalk.com/filter-image?image_url=https://buffer.com/library/content/images/2023/10/free-images.jpg]
 
-You have been hired as a software engineer to develop an application that will help the FBI find missing people.  The application will upload images to the FBI cloud database hosted in AWS. This will allow the FBI to run facial recognition software on the images to detect a match. You will be developing a NodeJS server and deploying it on AWS Elastic Beanstalk. 
-You will build upon the application we've developed during the lessons in this course. You'll complete a REST API endpoint in a backend service that processes incoming image URLs.
+Please check on proof image in images folder
 
-## Getting Started
+1. Deploy elastic beanstalk successfully
+<img src="images/Elastic-success.png" />
+<img src="images/Elastic-db.png" />
 
-You can clone this repo to run the project locally, or navigate to the workspace in the Udacity course.
+2. It works well
+<img src="images/it-work.png" />
 
-## Project Instructions
-
-To complete this project, you will need to:
-
-* Set up node environment
-* Create a new endpoint in the server.js file
-* Deploying your system
-
-## Testing
-
-Successful URL responses should have a 200 code. Ensure that you include error codes for the scenario that someone uploads something other than an image and for other common errors.
-
-## License
-
-[License](LICENSE.txt)
